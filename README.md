@@ -36,3 +36,18 @@ It demonstrates how AWS Rekognition can be used for computer vision tasks like i
    ```bash
    git clone https://github.com/your-username/amazon-rekognition-demo.git
    cd amazon-rekognition-demo
+
+
+#install dependencies
+pip install boto3
+
+#Configure AWS credentials
+aws configure
+
+#Run the Script
+python script.py
+
+#Example Output
+Label: Person (Confidence: 99.2%)
+Label: Dog (Confidence: 94.5%)
+Label: Park (Confidence: 87.8%)
