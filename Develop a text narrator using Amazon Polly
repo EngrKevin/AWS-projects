@@ -1,0 +1,38 @@
+# Amazon Polly Audio Converter
+
+## 📌 Overview
+This AWS Lambda function converts input text into speech using **Amazon Polly** and stores the generated audio file in an **Amazon S3 bucket**.
+
+## 🚀 How It Works
+1. **Input**: The function receives a text string (via test event or trigger).
+2. **Processing**:
+   - Uses **Amazon Polly** to convert text to an MP3 audio stream.
+   - Stores the generated MP3 file in the specified **S3 bucket**.
+3. **Output**: Returns the S3 object key and bucket name where the file is stored.
+
+## 🛠 AWS Services Used
+- **Amazon Polly** – Converts text to natural-sounding speech.
+- **Amazon S3** – Stores the generated MP3 file.
+- **AWS Lambda** – Executes the text-to-speech and storage process.
+
+## 📂 Project Structure
+
+
+## 📋 Prerequisites
+Before deploying:
+- An AWS account with permissions for:
+  - `AmazonPollyFullAccess`
+  - `AmazonS3FullAccess`
+  - `AWSLambdaBasicExecutionRole`
+- An existing **S3 bucket** (update the code with your bucket name).
+- AWS CLI or Lambda Console for deployment.
+
+## ⚙️ Environment & Configuration
+- **Region**: Update the AWS SDK clients with your desired AWS region.
+- **Bucket Name**: Replace `<YOUR-BUCKET-NAME>` in the code with your actual bucket name.
+
+Example:
+```javascript
+const s3 = new S3({ region: 'ap-northeast-1' });
+const polly = new Polly({ region: 'ap-northeast-1' });
+const bucketName = 'pollyaudiostorage';
